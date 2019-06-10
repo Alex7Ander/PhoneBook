@@ -43,7 +43,7 @@ namespace PhoneBook
         public int selectCountDistinct(string tableName, string fieldName, string where)
         {
             int count;
-            this.aCommand.CommandText = "SELECT DISTINCT COUNT(" + fieldName + ") AS resInt FROM [" + tableName + "]";
+            this.aCommand.CommandText = "SELECT COUNT(" + fieldName + ") AS resInt FROM (SELECT DISTINCT "+ fieldName + " FROM ["+ tableName + "] "+ where + ")";
             if (where.Length != 0) this.aCommand.CommandText += (" WHERE " + where);
             try{
                 this.aConnection.Open();

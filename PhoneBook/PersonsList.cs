@@ -18,7 +18,7 @@ namespace PhoneBook
             groupName = _GroupName;
             string filePath = CurrentDirrectoryReturner.getDirrectory() + "//data//data.mdb";
             DataBase dataBase = DataBase.getInstanceDB(filePath);
-            this.countOfPersons = dataBase.selectCountDistinct("Persons", "groupName", "");
+            this.countOfPersons = dataBase.selectCount("Persons", "groupName", "");
             personItem = new string[this.countOfPersons];
             string sqlQuery = "SELECT name, middlename, surname FROM [Persons] WHERE groupName='" + groupName + "'";
             string[,] res = new string[this.countOfPersons, 3];

@@ -17,3 +17,13 @@ N:\___Projects\C#\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.csproj.Gener
 N:\___Projects\C#\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.csproj.CoreCompileInputs.cache
 N:\___Projects\C#\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.exe
 N:\___Projects\C#\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.pdb
+N:\___Projects\C#\PhoneBook\PhoneBook\PhoneBook\PhoneBook\bin\Debug\PhoneBook.exe.config
+N:\___Projects\C#\PhoneBook\PhoneBook\PhoneBook\PhoneBook\bin\Debug\PhoneBook.exe
+N:\___Projects\C#\PhoneBook\PhoneBook\PhoneBook\PhoneBook\bin\Debug\PhoneBook.pdb
+N:\___Projects\C#\PhoneBook\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.csprojAssemblyReference.cache
+N:\___Projects\C#\PhoneBook\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.MainForm.resources
+N:\___Projects\C#\PhoneBook\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.Properties.Resources.resources
+N:\___Projects\C#\PhoneBook\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.csproj.GenerateResource.cache
+N:\___Projects\C#\PhoneBook\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.csproj.CoreCompileInputs.cache
+N:\___Projects\C#\PhoneBook\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.exe
+N:\___Projects\C#\PhoneBook\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.pdb

@@ -22,7 +22,8 @@ namespace PhoneBook
             string[,] res = new string[this.countOfGroups, 1];
             dataBase.sendQuery<string>(sqlQuery, 1, res);
             for (int i = 0; i < this.countOfGroups; i++){
-                this.groups[i] = res[0, i];
+                String r = res[i, 0];
+                this.groups[i] = r;
             }
         }
 
