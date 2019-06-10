@@ -74,7 +74,12 @@ namespace PhoneBook
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            //
+            string _GroupName = this.groupsComboBox.SelectedItem.ToString();
+            string _Name = this.nameTextBox.Text;
+            string _MiddleName = this.MidNameTextBox.Text;
+            string _SurName = this.surNameTextBox.Text;
+            Person anyPerson = new Person(_GroupName, _Name, _MiddleName, _SurName, true);
+            int res = anyPerson.update();
         }
 
         private void addButton_Click(object sender, EventArgs e)
