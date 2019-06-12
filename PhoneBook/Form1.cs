@@ -57,10 +57,7 @@ namespace PhoneBook
 
         private void clearGUI()
         {
-            
-            this.photoPictureBox.Dispose();
             this.photoPictureBox.Image = null;
-
             this.nameTextBox.Text = "";
             this.surNameTextBox.Text = "";
             this.MidNameTextBox.Text = "";
@@ -94,7 +91,9 @@ namespace PhoneBook
             this.currentPhotoPath = anyPerson.PhotoPath;
             if (this.currentPhotoPath == null)
                 this.currentPhotoPath = CurrentDirrectoryReturner.getDirrectory() + "\\data\\noPhotoAvailable.jpg";
-            this.photoPictureBox.Image = Image.FromFile(this.currentPhotoPath);
+            var picStream = File.OpenRead(this.currentPhotoPath);
+            this.photoPictureBox.Image = Image.FromStream(picStream);
+            picStream.Close();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -153,10 +152,11 @@ namespace PhoneBook
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK){
                 this.currentPhotoPath = openFileDialog1.FileName;
-                this.photoPictureBox.Image = Image.FromFile(this.currentPhotoPath);
+                var picStream = File.OpenRead(this.currentPhotoPath);
+                this.photoPictureBox.Image = Image.FromStream(picStream);
+                picStream.Close();
             }
         }
 
@@ -173,6 +173,8 @@ namespace PhoneBook
                 if (res == 0){
                     this.clearGUI();
                     this.updatePersonsList();
+                    if (anyPerson.PhotoPath != null)
+                        File.Delete(anyPerson.PhotoPath);
                     MessageBox.Show("Успешное удаление!", "Успешно!");
                 }
                 else{
@@ -182,10 +184,6 @@ namespace PhoneBook
             catch (Exception exp){
                 MessageBox.Show("Ошибка! Удаление не было завершено! Попробуйте повторить попытку!", "Ошибка!");
             }
-
-            this.photoPictureBox.Dispose();
-            if (anyPerson.PhotoPath!=null)
-                File.Delete(anyPerson.PhotoPath);
         }
     }
 }
