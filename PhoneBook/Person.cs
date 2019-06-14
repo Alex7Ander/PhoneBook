@@ -69,15 +69,16 @@ namespace PhoneBook
             this.photoPath = _PhotoPath;
         }
 
-        public int update(String[] _UpdatingFiel, String[] _UpdatingValue, int _CountOfUpdating) 
+        public int update(Dictionary<String, String> UpdatedValues) 
         {
             string filePath = CurrentDirrectoryReturner.getDirrectory() + "//data//data.mdb";
             DataBase dataBase = DataBase.getInstanceDB(filePath);
             string sqlQuery = "UPDATE [Persons] SET ";
-            for (int i=0; i< _CountOfUpdating; i++){
-                string upStr = _UpdatingFiel[i] + "='" + _UpdatingValue[i] + "'";
+            int CountOfUpdating = UpdatedValues.Count();
+            for (int i=0; i< CountOfUpdating; i++){
+                string upStr = UpdatedValues.Keys.ElementAt(i) + "='" + UpdatedValues.Values.ElementAt(i) + "'";
                 sqlQuery += upStr;
-                if (i != _CountOfUpdating - 1) sqlQuery += ",";
+                if (i != CountOfUpdating - 1) sqlQuery += ",";
             }
             dataBase.sendNonQuery(sqlQuery);
             return 0;

@@ -103,7 +103,8 @@ namespace PhoneBook
             string _MiddleName = this.MidNameTextBox.Text;
             string _SurName = this.surNameTextBox.Text;
             Person anyPerson = new Person(_GroupName, _Name, _MiddleName, _SurName, true);
-            //int res = anyPerson.update();
+            Dictionary<String, String> UpdatedValues;
+            //int res = anyPerson.update(String[] _UpdatingFiel, String[] _UpdatingValue, int _CountOfUpdating);
             String newPhotoPath = CurrentDirrectoryReturner.getDirrectory() + "\\data\\Photos\\"+
                 anyPerson.Groupname+"_"+ anyPerson.Surname+"_"+anyPerson.Name+"_"+anyPerson.MiddleName +".jpg";
             if (!anyPerson.PhotoPath.Equals(newPhotoPath)) {
