@@ -78,10 +78,11 @@ namespace PhoneBook
             for (int i=0; i< CountOfUpdating; i++){
                 string upStr = UpdatedValues.Keys.ElementAt(i) + "='" + UpdatedValues.Values.ElementAt(i) + "'";
                 sqlQuery += upStr;
-                if (i != CountOfUpdating - 1) sqlQuery += ",";
+                if (i != CountOfUpdating - 1) sqlQuery += ", ";
             }
-            dataBase.sendNonQuery(sqlQuery);
-            return 0;
+            String where = " WHERE name='"+this.name+"' AND surname='"+this.surname+"' AND middlename='"+this.middleName+"' AND groupName='"+this.groupname+"'";
+            sqlQuery += where;
+            return dataBase.sendNonQuery(sqlQuery);
         }
 
         public int save()

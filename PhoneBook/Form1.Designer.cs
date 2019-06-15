@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.photoGroupBox = new System.Windows.Forms.GroupBox();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.photoPictureBox = new System.Windows.Forms.PictureBox();
@@ -53,7 +54,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.personsListBox = new System.Windows.Forms.ListBox();
             this.groupsComboBox = new System.Windows.Forms.ComboBox();
-            this.deleteButton = new System.Windows.Forms.Button();
             this.photoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -74,6 +74,16 @@
             this.photoGroupBox.TabIndex = 2;
             this.photoGroupBox.TabStop = false;
             this.photoGroupBox.Text = "Фото";
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(6, 481);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(251, 31);
+            this.deleteButton.TabIndex = 4;
+            this.deleteButton.Text = "Удалить ";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // addButton
             // 
@@ -300,24 +310,15 @@
             this.groupsComboBox.TabIndex = 0;
             this.groupsComboBox.SelectedIndexChanged += new System.EventHandler(this.groupsComboBox_SelectedIndexChanged);
             // 
-            // deleteButton
-            // 
-            this.deleteButton.Location = new System.Drawing.Point(6, 481);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(251, 31);
-            this.deleteButton.TabIndex = 4;
-            this.deleteButton.Text = "Удалить ";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 542);
+            this.ClientSize = new System.Drawing.Size(904, 542);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.photoGroupBox);
+            this.MaximumSize = new System.Drawing.Size(920, 580);
             this.Name = "MainForm";
             this.Text = "Телефонная книга";
             this.Shown += new System.EventHandler(this.MainForm_Shown);
